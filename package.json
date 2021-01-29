@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/lauramparker/TeamProject2/issues"
   },
-  "homepage": "https://github.com/lauramparker/TeamProject2#readme"
+  "homepage": "https://github.com/lauramparker/TeamProject2#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mysql": "^2.18.1",
+    "sequelize": "^6.5.0"
+  }
 }
