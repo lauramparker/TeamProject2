@@ -32,13 +32,13 @@ After achieving the MVP, the team will consider adding features that allow the u
 <li>Must be backed by a MySQL Database with a Sequelize ORM
 <li>Must have both GET and POST routes for retrieving and adding new data
 <li>Must be deployed using Heroku (with Data)
-<li>Must utilize at least one new library, package, or technology that we haven’t discussed (***TACKLE this EARLY)
-<li>Must have a polished frontend / UI:  will use handlebars for the view, and bideo to present enhanced video.
+<li>Must utilize at least one new library, package, or technology that we haven’t discussed <i>(Algolio)</i>
+<li>Must have a polished frontend / UI:  <i>(will use handlebars for the view, and bideo to present enhanced video.)</i>
 <li>Must have folder structure that meets MVC Paradigm
 <li>Must meet good quality coding standards (indentation, scoping, naming)
 <li>Must not expose sensitive API key information on the server
 
 OPTIONAL Requirements
-<li>incorporate authentication - YES, we will incorporate this
-<li>Use public dataset - NO, we will not sue this other than a seed.sql file
-<li>create migration strategy for sharing data across team members - NOT YET sure. We did find dataworld.com as a site for creating and dharing data projects amongst team members.
+<li>incorporate authentication - <i>YES, we will incorporate this</i>
+<li>Use public dataset - <i>NO, we will not use a public dataset this other than a seed.sql file</i>
+<li>create migration strategy for sharing data across team members - <i>NOT YET sure. We did find dataworld.com as a site for creating and dharing data projects amongst team members.</i>
