@@ -1,9 +1,18 @@
 <h1>"Bucket List"</h1>
 <h3>a wishlist of travel destinations</h3>
 
+<h3>Description</h3>
+The Bucket List application will allow users to generate a list if places where they want to travel, and maintain that list as they explore a post-COVID world.
 
-The Bucket List application will allow users to generate a list if places where they want to travel. 
+<h3>User Story</h3>
+As worldwide travel has suffered a significant decline during the COVID-19 pandemic, many of us look forward to the opportunity to travel again. Bucket List allows users to keep a record of places they'd like to go.
 
+As flexible work environments have become more widely available, many individuals want to travel more frequently throughout the year (and bring their work along!).
+
+When dreaming of vacation, people often forget the details of their early destination-research. The advanced features in Bucket List allows users to maintain these notes and make additional notes before the trip.
+
+
+<h3>How It Works</h3>
 The application will ask users to enter places through a user input field, and then add those places to list of destinations.
 
 Within the input field, the application will use an external tool, Algolio, https://community.algolia.com/, to auto-populate locations as the user inputs the text.
@@ -14,6 +23,8 @@ After a user has traveled to a place, they can move the location to their respec
 In addition, a video or other visual feature will display videos of favorite destinations (in carousel or other feature-rich format).  
 The application will use bideo.com to present this effect. (https://rishabhp.github.io/bideo.js/)
 
+<h3>Future Development</h3>
+After achieving the MVP, the team will consider adding features that allow the user to enter activities, sights, or other data fields for each location. Then create additional recommendations for similar travel experiences. 
 
 <h3>The requirements for Project #2 are as follows:</h3>
 <ul>
