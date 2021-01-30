@@ -23,6 +23,16 @@ After a user has traveled to a place, they can move the location to their respec
 In addition, a video or other visual feature will display videos of favorite destinations (in carousel or other feature-rich format).  
 The application will use bideo.com to present this effect. (https://rishabhp.github.io/bideo.js/)
 
+
+<h3>Workflow</h3>
+Homepage: User has 2 options : 1) Write a Travel Review;  2) Search Travel Review
+
+Page 2) Write Travel Review: 
+has columns/fields: a) writer  a) city (incorporates Algolia);  b) amentities (hotels, restaurants, transportation)   c) things to do (radio dials for recreational activities
+
+Page 3) Search Travel Review:
+has options for searching by city, content (specific fields for search TBD)
+
 <h3>Future Development</h3>
 After achieving the MVP, the team will consider adding features that allow the user to enter activities, sights, or other data fields for each location. Then create additional recommendations for similar travel experiences. 
 
