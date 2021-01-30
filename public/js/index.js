@@ -1,11 +1,37 @@
-// ADDS a new REVIEW to the list  
+// ADDS a new CITY REVIEW to the list  
 $(function() { 
-    $(".createNewReview").on("submit", function(event) {
+    $(".createNewCityReview").on("submit", function(event) {
     
       // preventDefault on a SUBMIT event
       event.preventDefault();
   
-      var newReview = {
+      var cityReview = {
+        city_name: $("#city_name").val().trim(),
+        review: $("#review_text").val().trim(),
+      };
+  
+      // Send the POST request.
+      $.ajax("/api/reviews", {
+        type: "POST",
+        data: cityReview
+      }).then(
+        function() {
+          console.log("created new review");
+          // Reload the page to get the updated list
+          location.reload();
+        });
+    });
+});
+
+
+// ADDS a new HOTEL REVIEW to the list  
+$(function() { 
+    $(".createNewHotelReview").on("submit", function(event) {
+    
+      // preventDefault on a SUBMIT event
+      event.preventDefault();
+  
+      var hotelReview = {
         hotel_name: $("#hotel_name").val().trim(),
         review: $("#review_text").val().trim(),
       };
@@ -13,7 +39,7 @@ $(function() {
       // Send the POST request.
       $.ajax("/api/reviews", {
         type: "POST",
-        data: newReview
+        data: hotelReview
       }).then(
         function() {
           console.log("created new review");
