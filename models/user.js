@@ -1,6 +1,3 @@
-const { DataTypes } = require("sequelize/types");
-const { sequelize } = require(".");
-
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("User", {
     id: {
@@ -16,10 +13,10 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  User.associate = (model) => {
-    User.hasMany(models.Travel, {
-      onDelete: 'cascade',
-    });
-  };
+  // User.associate = (model) => {
+  //   User.hasMany(model.Travel, {
+  //     onDelete: 'cascade',
+  //   });
+  // };
   return User;
 }
