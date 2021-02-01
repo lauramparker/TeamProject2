@@ -39,9 +39,9 @@ router.get('/api/post/:id', async (req, res) => {
 });
 
 //Create new review/blog post
-router.post('/api/post', async (req, res) => {
-  
-  let newPost = await Travel.create(req.body);
+router.post('/', async (req, res) => {
+  console.log(req.body);
+  let newPost = await db.Travel.create(req.body);
   res.json(newPost);
 });
 
@@ -55,3 +55,5 @@ router.put('/api/post/:id', async (req, res) => {
   });
   res.json(updatedPost);
 });
+
+module.exports = router;
