@@ -3,7 +3,17 @@ const { sequelize } = require(".");
 
 module.exports = (sequelize, DataTypes) => {
   const User = sequelize.define("User", {
-    name: DataTypes.STRING,
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+      allowNull: false,
+    },
+
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   });
 
   User.associate = (model) => {
