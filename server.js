@@ -1,7 +1,7 @@
 const express = require('express');
 
 // Require routes
-
+const travelRoutes = require("./controller/travel-controller");
 
 // Sets up the Express App
 const app = express();
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // Invoke routes
-
+app.use(travelRoutes);
 
 // Syncing our sequelize models and then starting our Express app
 db.sequelize.sync({ force: true }).then(() => {
