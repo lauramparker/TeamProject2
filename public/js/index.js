@@ -1,15 +1,13 @@
 // ADDS a new CITY REVIEW to the list  
 $(function() { 
-    $("#create-review").on("submit", function(event) {
+    $("#createCityreview").on("submit", function(event) {
       // preventDefault on a SUBMIT event
       event.preventDefault();
 
-      if 
-  
       var cityReview = {
         city_name: $("#inputName").val().trim(),
         review: $("#inputReview").val().trim(),
-        city_review: $("[name=cityRadio]:checked").val().trim()
+  //      city_review: $("[name=cityRadio]:checked").val().trim()
       };
   
       // Send the POST request.
@@ -19,16 +17,15 @@ $(function() {
       }).then(
         function() {
           console.log("created new review");
-          // Reload the page to get the updated list
           location.reload();
         });
     });
 });
 
 
-// ADDS a new HOTEL REVIEW to the list   ///Thinking these should actually be in the same function and then register as city or hotel based on the radio button.
+// ADDS a new HOTEL REVIEW to the list (separte button)
 $(function() { 
-    $(".createHotelReview").on("submit", function(event) {
+    $("#createHotelReview").on("submit", function(event) {
     
       // preventDefault on a SUBMIT event
       event.preventDefault();
@@ -36,7 +33,7 @@ $(function() {
       var hotelReview = {
         hotel_name: $("#inputName").val().trim(),
         review: $("#inputReview").val().trim(),
-        hotel_review: $("[name=hotelRadio]:checked").val().trim()
+    //    hotel_review: $("[name=hotelRadio]:checked").val().trim()
       };
       
       // Send the POST request.
@@ -46,7 +43,6 @@ $(function() {
       }).then(
         function() {
           console.log("created new review");
-          // Reload the page to get the updated list
           location.reload();
         });
     });
