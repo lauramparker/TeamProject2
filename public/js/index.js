@@ -1,9 +1,10 @@
 // ADDS a new CITY REVIEW to the list  
 $(function() { 
-    $(".createCityReview").on("submit", function(event) {
-    
+    $("#create-review").on("submit", function(event) {
       // preventDefault on a SUBMIT event
       event.preventDefault();
+
+      if 
   
       var cityReview = {
         city_name: $("#inputName").val().trim(),
