@@ -1,13 +1,14 @@
 // ADDS a new CITY REVIEW to the list  
 $(function() { 
-    $(".createNewCityReview").on("submit", function(event) {
+    $(".createCityReview").on("submit", function(event) {
     
       // preventDefault on a SUBMIT event
       event.preventDefault();
   
       var cityReview = {
-        city_name: $("#city_name").val().trim(),
-        review: $("#review_text").val().trim(),
+        city_name: $("#inputName").val().trim(),
+        review: $("#inputReview").val().trim(),
+        city_review: $("[name=cityRadio]:checked").val().trim()
       };
   
       // Send the POST request.
@@ -24,18 +25,19 @@ $(function() {
 });
 
 
-// ADDS a new HOTEL REVIEW to the list  
+// ADDS a new HOTEL REVIEW to the list   ///Thinking these should actually be in the same function and then register as city or hotel based on the radio button.
 $(function() { 
-    $(".createNewHotelReview").on("submit", function(event) {
+    $(".createHotelReview").on("submit", function(event) {
     
       // preventDefault on a SUBMIT event
       event.preventDefault();
   
       var hotelReview = {
-        hotel_name: $("#hotel_name").val().trim(),
-        review: $("#review_text").val().trim(),
+        hotel_name: $("#inputName").val().trim(),
+        review: $("#inputReview").val().trim(),
+        hotel_review: $("[name=hotelRadio]:checked").val().trim()
       };
-  
+      
       // Send the POST request.
       $.ajax("/api/reviews", {
         type: "POST",
