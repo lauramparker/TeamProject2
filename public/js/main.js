@@ -23,7 +23,7 @@ $(function() {
 });
 
 
-// ADDS a new HOTEL REVIEW to the list (separte button)
+// ADDS a new HOTEL REVIEW to the list (separate button)
 $(function() { 
     $("#createHotelReview").on("submit", function(event) {
     
