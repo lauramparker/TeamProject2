@@ -1,4 +1,5 @@
 const express = require('express');
+var exphbs = require("express-handlebars");
 
 // Require routes
 const travelRoutes = require("./controller/travel-controller");
@@ -13,6 +14,10 @@ const db = require('./models');
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// Set Handlebars.
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Static directory
 app.use(express.static('public'));
