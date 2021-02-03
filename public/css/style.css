@@ -1,0 +1,25 @@
+.page-holder {
+    min-height: 100vh;
+  }
+  
+.bg-cover {
+    background-size: cover !important;
+  }
+
+h1 {
+    margin-top: 20%;
+}
+
+.btn-primary {
+    color: #ffffff;
+    background-color: rgb(211, 83, 121);
+    border-color: rgb(211,93,121);
+    margin: 20px;
+}
+
+.btn-primary:hover {
+    color: #ffffff;
+    background-color: rgb(97, 95, 144);
+    border-color: rgb(97, 95, 144);
+    margin: 20px;
+}
