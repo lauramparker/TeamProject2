@@ -2,7 +2,7 @@ const express = require('express');
 var exphbs = require("express-handlebars");
 
 // Require routes
-
+const travelRoutes = require("./controller/travel-controller");
 
 // Sets up the Express App
 const app = express();
@@ -23,7 +23,7 @@ app.set("view engine", "handlebars");
 app.use(express.static('public'));
 
 // Invoke routes
-
+app.use(travelRoutes);
 
 // Syncing our sequelize models and then starting our Express app
 db.sequelize.sync({ force: true }).then(() => {
