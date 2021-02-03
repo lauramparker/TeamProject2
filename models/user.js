@@ -13,10 +13,10 @@ module.exports = (sequelize, DataTypes) => {
     },
   });
 
-  // User.associate = (model) => {
-  //   User.hasMany(model.Travel, {
-  //     onDelete: 'cascade',
-  //   });
-  // };
+  User.associate = (model) => {
+    User.hasMany(model.Travel, {
+      onDelete: 'cascade',
+    });
+  };
   return User;
 }

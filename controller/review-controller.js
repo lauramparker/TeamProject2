@@ -8,7 +8,7 @@ const router = express.Router();
 router.get('/api/reviews', async (req, res) => {
   
   var result = await db.Travel.findAll({
-    //include: [db.User],
+    include: [db.User],
   });
   //res.render('index',result);
   res.json(result);
@@ -22,7 +22,7 @@ router.get('/api/reviews/city/:city', async (req, res) => {
     where: {
       city_name: req.params.city,
     },
-    //include:[db.User], 
+    include:[db.User], 
   })
   //res.render('city',result);
   res.json(result);
