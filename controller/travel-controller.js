@@ -5,30 +5,48 @@ const router = express.Router();
 
 //Retrieves all posts
 //Renders it to index html file
-router.get('/', async (req, res) => {
+router.get('/api/reviews', async (req, res) => {
   
-  var result = await db.Trabel.findAll({
-    include: [db.User],
+  var result = await db.Travel.findAll({
+    //include: [db.User],
   });
-  res.render('index',result);
+  //res.render('index',result);
+  res.json(result);
 });
 
 //Retrieves all posts of a specific city
 //Renders it to city html file
-router.get('/api/post/city/:city', async (req, res) => {
+router.get('/api/reviews/city/:city', async (req, res) => {
   
   var result = await db.Travel.findAll({
     where: {
       city_name: req.params.city,
     },
-    include:[db.User], 
+    //include:[db.User], 
   })
-  res.render('city',result);
+  //res.render('city',result);
+  res.json(result);
+
+});
+
+//Retrieves all posts of a hotel name
+//Renders it to hotel html file
+router.get('/api/reviews/hotel/:hotel', async (req, res) => {
+  
+  var result = await db.Travel.findAll({
+    where: {
+      city_name: req.params.hotel,
+    },
+    //include:[db.User], 
+  })
+  //res.render('hotel',result);
+  res.json(result);
+
 });
 
 //Retrieves single post
 //Renders it to singPost html file
-router.get('/api/post/:id', async (req, res) => {
+router.get('/api/revies/:id', async (req, res) => {
   
   let post = await db.Travel.findOne({
     where: {
@@ -39,14 +57,14 @@ router.get('/api/post/:id', async (req, res) => {
 });
 
 //Create new review/blog post
-router.post('/', async (req, res) => {
+router.post('/api/reviews', async (req, res) => {
   console.log(req.body);
   let newPost = await db.Travel.create(req.body);
   res.json(newPost);
 });
 
 //Update review/blog
-router.put('/api/post/:id', async (req, res) => {
+router.put('/api/reviews/:id', async (req, res) => {
   
   let updatedPost = await db.Travel.update(req.body, {
     where: {
