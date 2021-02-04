@@ -23,16 +23,16 @@
             </div>
             </div> 
 
-            
+        <div class = "row-sm-12">  
+            {{!-- List of All City Reviews --}}  
             <div class="col-sm-6" id = "allReviews">
             
-                    <h3>All Reviews by City:</h3>
+                <h3>All Reviews by City:</h3>
                 <div class ="row">
                 <div class="col">
                     <ul> 
                     {{#each Travel}}
-                        {{!-- {{#if city_name}} --}}
-                        {{!-- {{> change-condition devour=true}} link to partial, not in use--}}
+                        {{!-- should we use partial --}}
                         <li>
                         <p>#{{this.id}}    {{this.city_name}}</p>
                         {{#if (city_review != null)}}
@@ -48,6 +48,28 @@
                 </div>
                 </div>
             </div>
+
+            {{!-- Search Reviews --}}  
+            <div class="col-sm-6" id = "searchReviews">
+            
+                <div class ="row">
+                <div class="col">
+
+                <form class="create-form"> 
+                    <h3 class="align-self-center">Search Reviews</h3>
+                    <div class="form-group row">
+                        <label for="inputSearchTerm" class="col-sm-2 col-form-label">Enter Search Term:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputSearchTerm" placeholder="Search">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg" id="searchBtn">Submit</button>
+                </form>
+                </div>
+                </div>
+            </div>
+
+        </div>
 
 </div> 
 
