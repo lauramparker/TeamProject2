@@ -9,3 +9,5 @@ router.post('/api/user', async (req, res) => {
   let newUser = await db.User.create(req.body);
   res.json(newUser);
 });
+
+module.exports = router;

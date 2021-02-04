@@ -1,4 +1,6 @@
 const express = require('express');
+const session = require("express-session");
+const passport = require("./config/passport");
 var exphbs = require("express-handlebars");
 
 // Require routes
@@ -23,6 +25,11 @@ app.set("view engine", "handlebars");
 
 // Static directory
 app.use(express.static('public'));
+
+//Passport sessions
+app.use(session({ secret: "keyboard cat" }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Invoke routes
 app.use(reviewRoutes);
