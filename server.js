@@ -1,8 +1,11 @@
 const express = require('express');
+const session = require("express-session");
+const passport = require("./config/passport");
 var exphbs = require("express-handlebars");
 
 // Require routes
-const travelRoutes = require("./controller/travel-controller");
+const reviewRoutes = require("./controller/review-controller");
+const userRoutes = require("./controller/user-controller");
 
 // Sets up the Express App
 const app = express();
@@ -10,6 +13,7 @@ const PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
 const db = require('./models');
+
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -22,10 +26,16 @@ app.set("view engine", "handlebars");
 // Static directory
 app.use(express.static('public'));
 
+//Passport sessions
+app.use(session({ secret: "keyboard cat" }));
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Invoke routes
-app.use(travelRoutes);
+app.use(reviewRoutes);
+app.use(userRoutes);
 
 // Syncing our sequelize models and then starting our Express app
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
 });
