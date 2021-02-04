@@ -7,7 +7,7 @@ const router = express.Router();
 //Renders it to index html file
 router.get('/', async (req, res) => {
   
-  var result = await db.Trabel.findAll({
+  var result = await db.Travel.findAll({
     include: [db.User],
   });
   res.render('index',result);
