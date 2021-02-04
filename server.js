@@ -1,5 +1,6 @@
 const express = require('express');
 var exphbs = require("express-handlebars");
+var path = require('path');
 
 // Require routes
 const travelRoutes = require("./controller/travel-controller");
@@ -20,7 +21,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Static directory
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, '/public')));
 
 // Invoke routes
 app.use(travelRoutes);
