@@ -48,8 +48,6 @@ $(function() {
     });
 });
 
-
-
 //SEARCH REVIEWS
 $(function() { 
     $(".searchBtn").on("click", function(event) {
