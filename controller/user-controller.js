@@ -1,13 +1,25 @@
 const express = require('express');
 const db = require('../models');
-
+const passport = require('../config/passport');
 const router = express.Router();
 
-//Create new user
+//Sign up
 router.post('/api/user', async (req, res) => {
   console.log(req.body);
   let newUser = await db.User.create(req.body);
-  res.json(newUser);
+  res.redirect(307, "/login");
 });
+
+//Login
+router.post('/login',
+  passport.authenticate("local", {
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true
+  }), function (req, res) {
+    res.json(req.user);
+  });
+
+
 
 module.exports = router;
