@@ -13,11 +13,8 @@ router.post('/api/signup', async (req, res) => {
 
 //Login
 router.post('/login',
-  passport.authenticate("local", {
-    successRedirect: '/',
-    failureRedirect: '/login',
-    failureFlash: true
-  }), function (req, res) {
+  passport.authenticate("local"), function (req, res) {
+    
     res.json(req.user);
   });
 
