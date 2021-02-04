@@ -1,0 +1,52 @@
+<div class="container"> 
+            <div class="d-flex"> 
+            <div class="align-self-center mx-auto">
+                <form class="create-form"> 
+                    <h3 class="align-self-center">Sign-Up</h3>
+
+                    {{!-- Input User ID - how do we integrate passport here?? --}}
+                    {{!-- Do we have a list of reviews by this user appearing on this page?? --}}
+                    <div class="form-group row">
+                        <label for="inputNewUser" class="col-sm-2 col-form-label">Create User ID:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputNewUser" placeholder="User">
+                        </div>
+                    </div>
+                      <div class="form-group row">
+                        <label for="inputNewPassword" class="col-sm-2 col-form-label">Create Password:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputNewPassword" placeholder="Password">
+                        </div>
+                    </div>
+                          <button type="submit" class="btn btn-primary btn-lg" id="create-user">Create Login</button>
+                </form>
+            </div>
+            </div> 
+
+            
+            <div class="col-sm-6" id = "allReviews">
+            
+                    <h3>All Reviews by City:</h3>
+                <div class ="row">
+                <div class="col">
+                    <ul> 
+                    {{#each Travel}}
+                        {{!-- {{#if city_name}} --}}
+                        {{!-- {{> change-condition devour=true}} link to partial, not in use--}}
+                        <li>
+                        <p>#{{this.id}}    {{this.city_name}}</p>
+                        <p>City Review: {{this.city_review}}</p>
+                            {{#if hotel_name}}
+                            <p>Hotel Review: {{this.hotel_review}}</p>
+                            {{/if}}
+                        </li>
+                        
+                    {{/each}}
+                    </ul>
+                </div>
+                </div>
+            </div>
+
+</div> 
+
+
