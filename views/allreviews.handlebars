@@ -18,7 +18,7 @@
                             <input type="text" class="form-control" id="inputNewPassword" placeholder="Password">
                         </div>
                     </div>
-                          <button type="submit" class="btn btn-primary btn-lg" id="create-user">Create Login</button>
+                          <button type="submit" class="btn btn-primary btn-lg" id="create-user">Create Login:</button>
                 </form>
             </div>
             </div> 
@@ -35,12 +35,14 @@
                         {{!-- {{> change-condition devour=true}} link to partial, not in use--}}
                         <li>
                         <p>#{{this.id}}    {{this.city_name}}</p>
+                        {{#if (city_review != null)}}
                         <p>City Review: {{this.city_review}}</p>
-                            {{#if hotel_name}}
-                            <p>Hotel Review: {{this.hotel_review}}</p>
-                            {{/if}}
-                        </li>
-                        
+                        {{/if}}
+                                {{#if (hotel_name != null)}}
+                                <p>Hotel Name: {{this.hotel_name}}</p>
+                                <p>Hotel Review: {{this.hotel_review}}</p>
+                                {{/if}}
+                        </li>  
                     {{/each}}
                     </ul>
                 </div>
