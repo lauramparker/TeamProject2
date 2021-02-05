@@ -46,7 +46,7 @@ router.get('/api/reviews/hotel/:hotel', async (req, res) => {
 
 //Retrieves single post
 //Renders it to singPost html file
-router.get('/api/revies/:id', async (req, res) => {
+router.get('/api/reviews/:id', async (req, res) => {
   
   let post = await db.Travel.findOne({
     where: {
@@ -58,9 +58,16 @@ router.get('/api/revies/:id', async (req, res) => {
 
 //Create new review/blog post
 router.post('/api/reviews', async (req, res) => {
-  console.log(req.body);
-  let newPost = await db.Travel.create(req.body);
-  res.json(newPost);
+  console.log(req.user);
+  let newReview = await db.Travel.create({
+
+      city_name: req.body.city_name,
+      city_review: req.body.city_review,
+      hotel_name: req.body.hotel_name,
+      hotel_review: req.body.hotel_review,
+      UserId: req.user.id,
+  });
+  res.json(newReview);
 });
 
 //Update review/blog
