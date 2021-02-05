@@ -34,7 +34,6 @@ module.exports = (sequelize, DataTypes) => {
       onDelete: 'cascade',
     });
   };
-<<<<<<< HEAD
 
   // Creating a custom method for our User model. This will check if an unhashed password entered by the user can be compared to the hashed password stored in our database
   User.prototype.validPassword = function(password) {
@@ -46,7 +45,5 @@ module.exports = (sequelize, DataTypes) => {
     user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
   });
   
-=======
->>>>>>> 314ea07580fe1aa6954d6fe1cda4e7f17c95affb
   return User;
 }
