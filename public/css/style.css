@@ -14,12 +14,28 @@ h1 {
     color: #ffffff;
     background-color: rgb(211, 83, 121);
     border-color: rgb(211,93,121);
-    margin: 20px;
 }
 
 .btn-primary:hover {
     color: #ffffff;
     background-color: rgb(97, 95, 144);
     border-color: rgb(97, 95, 144);
-    margin: 20px;
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+.loginForm, .signup, .review-form {
+  margin: 20%;
+  background-color: #ffffff;
+  padding: 5px 15px;
+}
+
+.login-title, .signup-title {
+  text-align: center;
+}
+
+#review, #search, #signup, #login {
+  margin: 20px;
 }
