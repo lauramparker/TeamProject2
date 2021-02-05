@@ -7,12 +7,12 @@ const router = express.Router();
 router.post('/api/signup', async (req, res) => {
   console.log(req.body);
   let newUser = await db.User.create(req.body);
-  res.redirect(307, "/");
+  res.redirect(307, "/main");
   //res.json(newUser);
 });
 
 //Login
-router.post('/login',
+router.post('/api/login',
   passport.authenticate("local"), function (req, res) {
     
     res.json(req.user);
