@@ -46,7 +46,7 @@ router.get('/api/reviews/hotel/:hotel', async (req, res) => {
 
 //Retrieves single post
 //Renders it to singPost html file
-router.get('/api/revies/:id', async (req, res) => {
+router.get('/api/reviews/:id', async (req, res) => {
   
   let post = await db.Travel.findOne({
     where: {

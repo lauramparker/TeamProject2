@@ -1,9 +1,9 @@
   {
   "development": {
-    "username": "gsdudmqxhxkbtsfs",
-    "password": "vpa328ipgx6qlg7w",
-    "database": "xuy3rcrkghf8nt1k",
-    "host": "phtfaw4p6a970uc0.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "root",
+    "password": "Karynnisah0ttie1!",
+    "database": "bucket_db",
+    "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
