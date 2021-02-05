@@ -27,7 +27,7 @@ $(document).ready(function() {
       password: password,
     })
       .then(function (data) {
-        window.location.replace('/');
+        window.location.replace('/main');
       })
       .catch((err) => {
         console.log(err);
