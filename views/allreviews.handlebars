@@ -2,11 +2,11 @@
             <div class="d-flex"> 
             <div class="align-self-center mx-auto">
                 <form class="create-form"> 
-                    <h3 class="align-self-center">Sign-Up</h3>
+                    <h3 class="align-self-center">Search Reviews</h3>
 
                     {{!-- Input User ID - how do we integrate passport here?? --}}
                     {{!-- Do we have a list of reviews by this user appearing on this page?? --}}
-                    <div class="form-group row">
+                    {{!-- <div class="form-group row">
                         <label for="inputNewUser" class="col-sm-2 col-form-label">Create User ID:</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="inputNewUser" placeholder="User">
@@ -17,8 +17,14 @@
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="inputNewPassword" placeholder="Password">
                         </div>
-                    </div>
-                          <button type="submit" class="btn btn-primary btn-lg" id="create-user">Create Login:</button>
+                    </div> --}}
+
+                    {{!-- ELASTICSEARCH Front-End --}}
+                            <div id="remote">
+                            <input class="typeahead" type="text" placeholder="Search Reviews Here">
+                            </div>
+
+                          <button type="submit" class="btn btn-primary btn-lg" id="searchBtn">Search</button>
                 </form>
             </div>
             </div> 
