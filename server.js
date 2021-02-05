@@ -24,6 +24,11 @@ app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+// Set handlebar routes
+app.get('/', function (req, res) {
+  res.render('home');
+});
+
 // Static directory
 app.use(express.static(path.join(__dirname, '/public')));
 
