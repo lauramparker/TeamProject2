@@ -12,6 +12,11 @@ const userRoutes = require("./controller/user-controller");
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+//Sets up the elasticsearch
+const { Client } = require('@elastic/elasticsearch')
+const client = new Client({ node: 'https://yahuaxydlj:p1p8dt5y8g@birch-114820214.us-east-1.bonsaisearch.net:443' })
+
+
 // Requiring our models for syncing
 const db = require('./models');
 
