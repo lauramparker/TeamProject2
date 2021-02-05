@@ -10,10 +10,9 @@ router.post('/api/signup', async (req, res) => {
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
-  }).then(function() {
+  });
     //res.redirect(307, "/main");
     res.json(newUser);
-  });
 });
 
 //Login

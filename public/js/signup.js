@@ -31,7 +31,7 @@ console.log(name.val());
       password: password,
     })
       .then(function (data) {
-        window.location.replace('/');
+        window.location.replace('/login');
       })
       .catch((err) => {
         console.log(err);
