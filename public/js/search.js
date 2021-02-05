@@ -1,15 +1,35 @@
-var searchReviews = new Search({
+var searchReviews = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     // prefetch: '../data/films/post_1960.json',
     remote: {
-      url: 'https://yahuaxydlj:p1p8dt5y8g@birch-114820214.us-east-1.bonsaisearch.net:443',
+      url: '/api/search?s=%QUERY',  //before deploying, make this parameter like "current server"
       wildcard: '%QUERY'
     }
   });
   
-  $('#remote .typeahead').typeahead(null, {
+  $('.typeahead').typeahead(null, {
     name: 'search-results',
-    display: 'value',
-    source: reviews
+    display: 'city_name',
+    source: searchReviews,
+    templates: {
+        empty: [
+          '<div class="empty-message">',
+            'unable to find any matches',
+          '</div>'
+        ].join('\n'),
+        suggestion: (review) =>`<div><strong>${review.city_name}</strong> – ${review.city_review.split(" ").slice(0, 10).join(" ")}...</div>`
+      }
+
   });
+
+
+//   $('.typeahead').bind('typeahead:change', function(ev, suggestion) {
+//     //     console.log('Selection: ' + suggestion);
+//     //   });
+
+
+//   $('.typeahead').bind('typeahead:select', function(ev, suggestion) {
+//     console.log('Selection: ' + suggestion);
+//navigate to full results page.... 
+//   });
