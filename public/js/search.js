@@ -19,17 +19,17 @@ var searchReviews = new Bloodhound({
           '</div>'
         ].join('\n'),
         suggestion: (review) =>`<div><strong>${review.city_name}</strong> – ${review.city_review.split(" ").slice(0, 10).join(" ")}...</div>`
-      }
+      }   //displays search suggestions
 
   });
 
 
-//   $('.typeahead').bind('typeahead:change', function(ev, suggestion) {
-//     //     console.log('Selection: ' + suggestion);
-//     //   });
+  $('.typeahead').bind('typeahead:select', function(ev, suggestion) {
+        window.location.href=`/reviews/${suggestion.id}`;
+        console.dir('Selection: ' , suggestion);
 
+  });
+//  render the object to the handlebars
 
-//   $('.typeahead').bind('typeahead:select', function(ev, suggestion) {
-//     console.log('Selection: ' + suggestion);
 //navigate to full results page.... 
 //   });
