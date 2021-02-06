@@ -24,11 +24,11 @@ var searchReviews = new Bloodhound({
   });
 
 
-  $('.typeahead').bind('typeahead:select', function(ev, suggestion) {
-        window.location.href=`/reviews/${suggestion.id}`;
-        console.dir('Selection: ' , suggestion);
+//   $('.typeahead').bind('typeahead:select', function(ev, suggestion) {
+//         window.location.href=`/reviews/${suggestion.id}`;
+//         console.dir('Selection: ' , suggestion);
 
-  });
+//   });
 //  render the object to the handlebars
 
 //navigate to full results page.... 
