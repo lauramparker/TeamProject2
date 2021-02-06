@@ -29,7 +29,8 @@ var searchReviews = new Bloodhound({
 //     //   });
 
 
-//   $('.typeahead').bind('typeahead:select', function(ev, suggestion) {
-//     console.log('Selection: ' + suggestion);
-//navigate to full results page.... 
-//   });
+   $('.typeahead').bind('typeahead:select', function(ev, suggestion) {
+    console.log(suggestion);
+    window.location.href= `/reviews/${suggestion.id}`;
+    
+   });
