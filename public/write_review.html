@@ -12,48 +12,45 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="d-flex align-self-center">
-      <div class="align-self-center mx-auto">
-        <form class="create-form reviewForm">
-        <div class="justify-content-center">
-          <h3 class="text-center">Write A Review</h3>
+
+  <div style="background: url('./css/mountain.jpeg')" class="page-holder bg-cover">
+    <div class="container py-5">
+
+      <form class="create-form reviewForm">
+        <h3 class="review-title">Write A Review</h3>
+
+        <div class="city-review-form">
+          <div class="form-group row">
+            <label for="inputCity" class="col-sm-6 col-form-label">City Name:</label>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" id="inputCity" placeholder="Name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="cityReview" class="col-sm-6 col-form-label">City Review:</label>
+            <div class="col-sm-12">
+              <textarea class="form-control" id="cityReview" placeholder="Review" rows="12"></textarea>
+            </div>
+          </div>
         </div>
-          <div class="row">
-            <div class="col">
-              <div class="form-group row">
-                <label for="inputCity" class="col col-form-label">City Name:</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputCity" placeholder="Name">
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="cityReview" class="col col-form-label">City Review:</label>
-                <div class="col-sm-12">
-                  <textarea class="form-control" id="cityReview" placeholder="Review" rows="12"></textarea>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="form-group row">
-                <label for="inputHotel" class="col col-form-label">Hotel Name:</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputHotel" placeholder="Optional">
-                </div>
-              </div>
-              <div class="form-group row">
-                <label for="hotelReview" class="col col-form-label">Hotel Review:</label>
-                <div class="col-sm-12">
-                  <textarea class="form-control" id="hotelReview" placeholder="Optional" rows="12"></textarea>
-                </div>
-              </div>
+
+        <div class="hotel-review-form">
+          <div class="form-group row">
+            <label for="inputHotel" class="col-sm-6 col-form-label">Hotel Name:</label>
+            <div class="col-sm-12">
+              <input type="text" class="form-control" id="inputHotel" placeholder="Name">
             </div>
           </div>
-          <div class="row justify-content-center">
-            <button type="submit" class="btn btn-primary btn-lg" id="create-review">Submit Review</button>
+          <div class="form-group row">
+            <label for="hotelReview" class="col-sm-6 col-form-label">Hotel Review:</label>
+            <div class="col-sm-12">
+              <textarea class="form-control" id="hotelReview" placeholder="Review" rows="12"></textarea>
+            </div>
           </div>
-        </form>
-      </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" id="create-review">Submit Review</button>
+      </form>
+
     </div>
   </div>
 
