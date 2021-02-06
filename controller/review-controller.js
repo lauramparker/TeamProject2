@@ -9,13 +9,13 @@ const client = new Client({ node: 'https://yahuaxydlj:p1p8dt5y8g@birch-114820214
 
 //Retrieves all posts
 //Renders it to index html file
-router.get('/api/reviews', async (req, res) => {
+router.get('reviews', async (req, res) => {
   
   var result = await db.Travel.findAll({
     include: [db.User],
   });
-  //res.render('index',result);
-  res.json(result);
+  res.render('allreviews',result);
+  
 });
 
 //Retrieves all posts of a specific city
@@ -50,14 +50,15 @@ router.get('/api/reviews/hotel/:hotel', async (req, res) => {
 
 //Retrieves single post
 //Renders it to singPost html file
-router.get('/api/reviews/:id', async (req, res) => {
+router.get('/reviews/:id', async (req, res) => {
   
   let post = await db.Travel.findOne({
     where: {
       id: req.params.id,
     },
+    raw: true
   });
-  res.render('singlePost', post);
+  res.render('singlePost', { review: post });
 });
 
 //Create new review/blog post
