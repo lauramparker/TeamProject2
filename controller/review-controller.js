@@ -3,6 +3,10 @@ const db = require('../models');
 
 const router = express.Router();
 
+//require elasticsearch
+const { Client } = require('@elastic/elasticsearch')
+const client = new Client({ node: 'https://yahuaxydlj:p1p8dt5y8g@birch-114820214.us-east-1.bonsaisearch.net:443' })
+
 //Retrieves all posts
 //Renders it to index html file
 router.get('/api/reviews', async (req, res) => {
@@ -67,6 +71,18 @@ router.post('/api/reviews', async (req, res) => {
       hotel_review: req.body.hotel_review,
       UserId: req.user.id,
   });
+  // Insert into elasticsearch
+  await client.index({
+    index: 'reviews',
+    refresh: true,
+    body: {
+      id: newReview.id,
+      city_name: req.body.city_name,
+      city_review: req.body.city_review,
+      hotel_name: req.body.hotel_name,
+      hotel_review: req.body.hotel_review,
+    }
+  })
   res.json(newReview);
 });
 

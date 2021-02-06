@@ -7,10 +7,12 @@ var path = require('path');
 // Require routes
 const reviewRoutes = require("./controller/review-controller");
 const userRoutes = require("./controller/user-controller");
+const searchRoutes = require("./controller/search-controller");
 
 // Sets up the Express App
 const app = express();
 const PORT = process.env.PORT || 8080;
+
 
 // Requiring our models for syncing
 const db = require('./models');
@@ -40,9 +42,10 @@ app.use(passport.session());
 // Invoke routes
 app.use(reviewRoutes);
 app.use(userRoutes);
+app.use(searchRoutes);
 require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
-db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync().then(() => {
   app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
 });
