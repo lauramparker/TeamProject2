@@ -35,7 +35,7 @@ app.get('/handlebars', function (req, res) {
 app.use(express.static(path.join(__dirname, '/public')));
 
 //Passport sessions
-app.use(session({ secret: "keyboard cat" }));
+app.use(session({ secret: "keyboard cat" }));<button type="submit" class="btn btn-primary btn-lg" id="searchBtn">Submit</button>
 app.use(passport.initialize());
 app.use(passport.session());
 

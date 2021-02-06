@@ -1,6 +1,24 @@
-
-<pre>
- id: {{ review.id }}
-  city_name: {{ review.city_name }}
-  city_review: {{ review.city_review }}
-</pre>          
+<div class="container">
+  <div class="d-flex">
+    <div class="align-self-center mx-auto">
+      <form class="create-form">
+        <h3 class="align-self-center">Post Review</h3>
+          <div class = "row-sm-12">
+            {{!-- Input Review --}}
+            <div class="col-sm-6" id = "singlePost">
+              <h3>Post Review of City:</h3>
+                <div class ="row">
+                  <div class="col">
+                    <p>City Name: {{ review.city_name }}</p>
+                    <p>City Review: {{ review.city_review }}</p>
+                    <p>Hotel Name: {{ review.hotel_name }}</p>
+                    <p>Hotel Review: {{ review.hotel_review }}</p>
+                    <button type="submit" class="btn btn-primary btn-lg" id="searchBtn">Submit</button>
+                  </div>
+                </div>
+            </div>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
