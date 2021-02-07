@@ -14,7 +14,6 @@ router.get('/reviews', async (req, res) => {
   var result = await db.Travel.findAll({
     include: [db.User],
   });
-  console.log(result);
   res.render('allreviews', { review: result });
   
 });
