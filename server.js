@@ -26,11 +26,6 @@ app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Set handlebar routes
-app.get('/handlebars', function (req, res) {
-  res.render('allreviews');
-});
-
 // Static directory
 app.use(express.static(path.join(__dirname, '/public')));
 

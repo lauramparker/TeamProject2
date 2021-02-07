@@ -39,3 +39,11 @@ h1 {
 #review, #search, #signup, #login {
   margin: 20px;
 }
+
+.card {
+  opacity: .6;
+}
+
+.card-body {
+  color: black;
+}
