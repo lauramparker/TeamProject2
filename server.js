@@ -26,16 +26,11 @@ app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-// Set handlebar routes
-app.get('/handlebars', function (req, res) {
-  res.render('allreviews');
-});
-
 // Static directory
 app.use(express.static(path.join(__dirname, '/public')));
 
 //Passport sessions
-app.use(session({ secret: "keyboard cat" }));<button type="submit" class="btn btn-primary btn-lg" id="searchBtn">Submit</button>
+app.use(session({ secret: "keyboard cat" }));
 app.use(passport.initialize());
 app.use(passport.session());
 

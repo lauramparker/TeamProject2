@@ -46,6 +46,14 @@ h1 {
   margin: 20px;
 }
 
+.card {
+  opacity: .6;
+}
+
+.card-body {
+  color: black;
+}
+
 .city-review-form, .hotel-review-form {
   float: left;
   height: 450px;
@@ -54,4 +62,8 @@ h1 {
 }
 .hotel-review-form {
   margin-left: 2.5%;
+}
+
+nav {
+  background-color: rgba(255, 255, 255, 0.432);
 }

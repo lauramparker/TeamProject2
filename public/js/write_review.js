@@ -35,7 +35,7 @@ $(document).ready(function() {
       hotel_review: hotelreview,
     })
       .then(function (data) {
-        window.location.replace('/main');
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
