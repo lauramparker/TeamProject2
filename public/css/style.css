@@ -63,3 +63,7 @@ h1 {
 .hotel-review-form {
   margin-left: 2.5%;
 }
+
+nav {
+  background-color: rgba(255, 255, 255, 0.432);
+}
