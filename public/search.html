@@ -33,16 +33,25 @@
             </div>
         </nav>
 
-        <div class="container">
-            <!-- {{!-- ELASTICSEARCH Front-End --}} -->
-            <div id="remote">
-                <label>Search Reviews:<input class="typeahead" type="text" placeholder="Search Reviews Here"> </label>
+        <!-- {{!-- ELASTICSEARCH Front-End --}} -->
+        <div class="container py-5">
+            <form class="create-form search-form">
+              <h3 class="review-title">Search Reviews</h3>
+
+        <div id="remote">
+            <label for="inputSearchTerm" class="col-sm-12 col-form-label">Enter a search term and select from drop down list</label>
+            <div class="col-sm-12">       
+                <input class="col-sm-12 typeahead" type="text" placeholder="Search Reviews Here">
             </div>
-            <button type="submit" class="btn btn-primary btn-lg" id="searchBtn">Search</button>
+        <!-- <button type="submit" class="btn btn-primary btn-lg" id="searchBtn">Search</button> -->
         </div>
-    </div>
 
     <!-- {{!-- ELASTICSEARCH script --}} -->
+</form>
+</div>
+</div>
+
+
     <script type="text/javascript" src="js/typeahead.bundle.min.js"></script>
     <script type="text/javascript" src="js/search.js"></script>
 
