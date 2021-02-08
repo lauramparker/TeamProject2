@@ -14,17 +14,32 @@ router.get('/api/search', async (req, res) => {
     console.log(req.params);
     console.log(req.body);
 
-  // Let's search!
-  const { body } = await client.search({
+
+   // Let's search! (multi search)
+   const { body } = await client.search({
     index: 'reviews',
     body: {
       query: {
-        match: {
-          city_review: query
+        multi_match: {
+          query: query,
+          fields: ["city_name", "city_review", "hotel_name", "hotel_review"]
         }
       }
     }
   })
+
+  // Let's search! (one field search)
+  // const { body } = await client.search({
+  //   index: 'reviews',
+  //   body: {
+  //     query: {
+  //       match: {
+  //         city_review: query
+  //       }
+  //     }
+  //   }
+  // })
+
   console.log(body.hits.hits)
 
   //send empty res
