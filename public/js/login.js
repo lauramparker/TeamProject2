@@ -22,12 +22,12 @@ $(document).ready(function() {
   });
 
   function logIn(email, password) {
-    $.post('/login', {
+    $.post('/api/login', {
       email: email,
       password: password,
     })
       .then(function (data) {
-        window.location.replace('/');
+        window.location.replace('/main');
       })
       .catch((err) => {
         console.log(err);

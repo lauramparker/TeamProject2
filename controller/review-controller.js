@@ -3,15 +3,19 @@ const db = require('../models');
 
 const router = express.Router();
 
+//require elasticsearch
+const { Client } = require('@elastic/elasticsearch')
+const client = new Client({ node: 'https://yahuaxydlj:p1p8dt5y8g@birch-114820214.us-east-1.bonsaisearch.net:443' })
+
 //Retrieves all posts
 //Renders it to index html file
-router.get('/api/reviews', async (req, res) => {
+router.get('/reviews', async (req, res) => {
   
   var result = await db.Travel.findAll({
     include: [db.User],
   });
-  //res.render('index',result);
-  res.json(result);
+  res.render('allreviews', { review: result });
+  
 });
 
 //Retrieves all posts of a specific city
@@ -46,21 +50,41 @@ router.get('/api/reviews/hotel/:hotel', async (req, res) => {
 
 //Retrieves single post
 //Renders it to singPost html file
-router.get('/api/revies/:id', async (req, res) => {
+router.get('/reviews/:id', async (req, res) => {
   
   let post = await db.Travel.findOne({
     where: {
       id: req.params.id,
     },
+    raw: true
   });
-  res.render('singlePost', post);
+  res.render('singlePost', { review: post });
 });
 
 //Create new review/blog post
 router.post('/api/reviews', async (req, res) => {
-  console.log(req.body);
-  let newPost = await db.Travel.create(req.body);
-  res.json(newPost);
+  console.log(req.user);
+  let newReview = await db.Travel.create({
+
+      city_name: req.body.city_name,
+      city_review: req.body.city_review,
+      hotel_name: req.body.hotel_name,
+      hotel_review: req.body.hotel_review,
+      UserId: req.user.id,
+  });
+  // Insert into elasticsearch
+  await client.index({
+    index: 'reviews',
+    refresh: true,
+    body: {
+      id: newReview.id,
+      city_name: req.body.city_name,
+      city_review: req.body.city_review,
+      hotel_name: req.body.hotel_name,
+      hotel_review: req.body.hotel_review,
+    }
+  })
+  res.json(newReview);
 });
 
 //Update review/blog
