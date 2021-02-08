@@ -1,5 +1,7 @@
--- Identify database
+-- Drops bucket_db if it exits currently --
+DROP DATABASE IF EXISTS bucket_db;
 
+-- Identify database
 CREATE DATABASE bucket_db;
 USE bucket_db;
 
