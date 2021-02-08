@@ -29,16 +29,46 @@ h1 {
 .loginForm, .signup {
   margin: 20%;
   background-color: #ffffff;
-  padding: 5px 15px;
+  padding: 15px 15px;
+  border-radius: 25px;
 }
 
 .reviewForm {
-  margin: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 5%;
   background-color: #ffffff;
-  padding: 5px 15px;
+  padding: 15px 15px;
+  border-radius: 25px;
   }
 
-.login-title, .signup-title, .review-title {
+.city-review-form, .hotel-review-form {
+  float: left;
+  height: 460px;
+  width: 45%;
+  padding: 15px;
+  margin-left: 2%;
+}
+
+.hotel-review-form {
+  margin-left: 5%;
+}
+
+#create-review {
+  margin-left: 4%;
+}
+
+.search-form, .display-form {
+  margin-top: 10%;
+  margin-left: 25%;
+  margin-right: 25%;
+  height: 400px;
+  background-color: white;
+  padding: 5px 15px;
+  border-radius: 25px;
+}
+
+.login-title, .signup-title, .review-title, .search-form {
   text-align: center;
 }
 
@@ -54,16 +84,10 @@ h1 {
   color: black;
 }
 
-.city-review-form, .hotel-review-form {
-  float: left;
-  height: 450px;
-  width: 45%;
-  padding: 5px;
-}
-.hotel-review-form {
-  margin-left: 2.5%;
-}
-
 nav {
   background-color: rgba(255, 255, 255, 0.432);
+}
+
+#passwordHelp, #emailHelp {
+  font-style: italic;
 }
