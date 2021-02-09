@@ -3,6 +3,7 @@ const session = require("express-session");
 const passport = require("./config/passport");
 var exphbs = require("express-handlebars");
 var path = require('path');
+require('dotenv').config();
 
 // Require routes
 const reviewRoutes = require("./controller/review-controller");
@@ -12,6 +13,9 @@ const searchRoutes = require("./controller/search-controller");
 // Sets up the Express App
 const app = express();
 const PORT = process.env.PORT || 8080;
+
+const { Client } = require('@elastic/elasticsearch')
+const client = new Client({ node: 'https://jxppt8ld4g:hmxqbbfzo8@cherry-370890600.us-east-1.bonsaisearch.net:443' });
 
 
 // Requiring our models for syncing

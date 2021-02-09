@@ -5,7 +5,7 @@ const router = express.Router();
 
 //require elasticsearch
 const { Client } = require('@elastic/elasticsearch')
-const client = new Client({ node: 'https://yahuaxydlj:p1p8dt5y8g@birch-114820214.us-east-1.bonsaisearch.net:443' })
+const client = new Client({ node: 'https://jxppt8ld4g:hmxqbbfzo8@cherry-370890600.us-east-1.bonsaisearch.net:443' })
 
 //Retrieves all posts
 //Renders it to allreviews html file
