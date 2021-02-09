@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
-    "password": "Brutu$Buck3y3!!",
+    "username": "process.env.DB_USER",
+    "password": "process.env.DB_PASS",
     "database": "bucket_db",
-    "host": "localhost",
+    "host": "process.env.DB_HOST",
     "dialect": "mysql"
   },
   "test": {
