@@ -8,7 +8,7 @@ const client = new Client({ node: 'https://yahuaxydlj:p1p8dt5y8g@birch-114820214
 const router = express.Router();
 
 //Retrieves 
-router.get('/api/search', async (req, res) => {
+router.get('/api/search?s', async (req, res) => {
     
     const query = req.query.s  //req.params search
     console.log(req.params);
@@ -16,29 +16,29 @@ router.get('/api/search', async (req, res) => {
 
 
    // Let's search! (multi search)
-   const { body } = await client.search({
-    index: 'reviews',
-    body: {
-      query: {
-        multi_match: {
-          query: query,
-          fields: ["city_name", "city_review", "hotel_name", "hotel_review"]
-        }
-      }
-    }
-  })
-
-  // Let's search! (one field search)
-  // const { body } = await client.search({
+  //  const { body } = await client.search({
   //   index: 'reviews',
   //   body: {
   //     query: {
-  //       match: {
-  //         city_review: query
+  //       multi_match: {
+  //         query: query,
+  //         fields: ["city_name", "city_review", "hotel_name", "hotel_review"]
   //       }
   //     }
   //   }
   // })
+
+  // Let's search! (one field search)
+  const { body } = await client.search({
+    index: 'reviews',
+    body: {
+      query: {
+        match: {
+          city_review: query
+        }
+      }
+    }
+  })
 
   console.log(body.hits.hits)
 
