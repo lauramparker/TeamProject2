@@ -2,7 +2,7 @@ const express = require('express');
 
 const { Client } = require('@elastic/elasticsearch')
 //input the elasticsearch URL here
-const client = new Client({ node: 'https://yahuaxydlj:p1p8dt5y8g@birch-114820214.us-east-1.bonsaisearch.net:443' })
+const client = new Client({ node: 'https://jxppt8ld4g:hmxqbbfzo8@cherry-370890600.us-east-1.bonsaisearch.net:443'})
 
 
 const router = express.Router();
@@ -14,17 +14,54 @@ router.get('/api/search', async (req, res) => {
     console.log(req.params);
     console.log(req.body);
 
-  // Let's search!
-  const { body } = await client.search({
+
+    try {
+      const { body } = await client.search({
+       index: 'reviews',
+       body: {
+         query: {
+           multi_match: {
+             query: query,
+             fields: ["city_name", "city_review", "hotel_name", "hotel_review"]
+           }
+         }
+       }
+     }) 
+    }catch (err) {
+       if (err.message) console.log(err.message);
+       console.log(err);
+     }
+  
+
+
+   // Let's search! (multi search)
+   var { body } = await client.search({
     index: 'reviews',
     body: {
       query: {
-        match: {
-          city_review: query
+        multi_match: {
+          query: query,
+          fields: ["city_name", "city_review", "hotel_name", "hotel_review"]
         }
       }
     }
-  })
+  });
+} catch (err) {
+  console.log(err);
+}
+
+  // Let's search! (one field search)
+  // const { body } = await client.search({
+  //   index: 'reviews',
+  //   body: {
+  //     query: {
+  //       match: {
+  //         city_review: query
+  //       }
+  //     }
+  //   }
+  // })
+
   console.log(body.hits.hits)
 
   //send empty res

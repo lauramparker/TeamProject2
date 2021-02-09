@@ -1,10 +1,12 @@
-  {
+{
   "development": {
+
     "username": "root",
-    "password": "Karynnisah0ttie1!",
+    "password": "Brutu$Buck3y3!!",
     "database": "bucket_db",
     "host": "localhost",
     "dialect": "mysql"
+
   },
   "test": {
     "username": "root",
@@ -14,10 +16,7 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "use_env_variable": "JAWSDB_URL",
     "dialect": "mysql"
-  }
+    }
 }
