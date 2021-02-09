@@ -14,6 +14,7 @@ router.get('/api/search', async (req, res) => {
     console.log(req.params);
     console.log(req.body);
 
+
     try {
       const { body } = await client.search({
        index: 'reviews',
@@ -32,7 +33,24 @@ router.get('/api/search', async (req, res) => {
      }
   
 
-  // // Let's search! (one field search)
+
+   // Let's search! (multi search)
+   var { body } = await client.search({
+    index: 'reviews',
+    body: {
+      query: {
+        multi_match: {
+          query: query,
+          fields: ["city_name", "city_review", "hotel_name", "hotel_review"]
+        }
+      }
+    }
+  });
+} catch (err) {
+  console.log(err);
+}
+
+  // Let's search! (one field search)
   // const { body } = await client.search({
   //   index: 'reviews',
   //   body: {
