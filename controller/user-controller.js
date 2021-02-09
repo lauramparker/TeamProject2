@@ -26,6 +26,5 @@ router.post('/api/login',
     res.json(req.user);
   });
 
-s
 
 module.exports = router;
