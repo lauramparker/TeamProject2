@@ -11,8 +11,8 @@ const router = express.Router();
 router.get('/api/search', async (req, res) => {
     
   try {
-    var query = req.query.s  //req.params search
-    console.log(req.params);
+    var query = await req.query.s  //req.params search
+    console.log(req.query);
     console.log(req.body);
 
 

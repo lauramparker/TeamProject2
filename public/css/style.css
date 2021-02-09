@@ -76,11 +76,11 @@ h1 {
   margin: 20px;
 }
 
-.card {
+.card, form{
   opacity: .6;
 }
 
-.card-body {
+.card-body, form{
   color: black;
 }
 
@@ -90,4 +90,8 @@ nav {
 
 #passwordHelp, #emailHelp {
   font-style: italic;
+}
+
+button {
+  background-color: chartreuse;
 }
