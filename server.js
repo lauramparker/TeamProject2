@@ -3,6 +3,7 @@ const session = require("express-session");
 const passport = require("./config/passport");
 var exphbs = require("express-handlebars");
 var path = require('path');
+require('dotenv').config();
 
 // Require routes
 const reviewRoutes = require("./controller/review-controller");
