@@ -1,7 +1,7 @@
 'use strict'
 const { Client } = require('@elastic/elasticsearch')
 //input the elasticsearch URL here
-const client = new Client({ node: 'https://yahuaxydlj:p1p8dt5y8g@birch-114820214.us-east-1.bonsaisearch.net:443' })
+const client = new Client({ node: 'https://jxppt8ld4g:hmxqbbfzo8@cherry-370890600.us-east-1.bonsaisearch.net:443' })
 
 //1 creating an index
 client.indices.create({
