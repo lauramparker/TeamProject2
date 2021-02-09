@@ -5,23 +5,26 @@ const router = express.Router();
 
 //Sign up
 router.post('/api/signup', async (req, res) => {
+
+  try{
   console.log(req.body);
-  let newUser = await db.User.create({
+  var newUser = await db.User.create({
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
   });
-    //res.redirect(307, "/main");
+} catch (err) {
+  console.log(err);
+}
     res.json(newUser);
 });
 
 //Login
 router.post('/api/login',
-  passport.authenticate("local"), function (req, res) {
+  passport.authenticate("local"),(req, res) => {
     console.log(req.user);
     res.json(req.user);
   });
-
 
 
 module.exports = router;

@@ -1,10 +1,12 @@
 {
   "development": {
+
     "username": "root",
     "password": "Brutu$Buck3y3!!",
     "database": "bucket_db",
     "host": "localhost",
     "dialect": "mysql"
+
   },
   "test": {
     "username": "root",

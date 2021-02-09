@@ -10,13 +10,14 @@ const router = express.Router();
 //Retrieves 
 router.get('/api/search', async (req, res) => {
     
-    const query = req.query.s  //req.params search
+  try {
+    var query = req.query.s  //req.params search
     console.log(req.params);
     console.log(req.body);
 
 
    // Let's search! (multi search)
-   const { body } = await client.search({
+   var { body } = await client.search({
     index: 'reviews',
     body: {
       query: {
@@ -26,7 +27,10 @@ router.get('/api/search', async (req, res) => {
         }
       }
     }
-  })
+  });
+} catch (err) {
+  console.log(err);
+}
 
   // Let's search! (one field search)
   // const { body } = await client.search({
