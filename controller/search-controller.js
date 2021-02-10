@@ -16,7 +16,7 @@ router.get('/api/search', async (req, res) => {
 
 
     try {
-      const { body } = await client.search({
+      var { body } = await client.search({
        index: 'reviews',
        body: {
          query: {
@@ -31,6 +31,7 @@ router.get('/api/search', async (req, res) => {
        if (err.message) console.log(err.message);
        console.log(err);
      }
+
 
   // Let's search! (one field search)
   // const { body } = await client.search({
