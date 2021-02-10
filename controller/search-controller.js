@@ -16,7 +16,7 @@ router.get('/api/search', async (req, res) => {
 
 
     try {
-      const { body } = await client.search({
+      var { body } = await client.search({
        index: 'reviews',
        body: {
          query: {
